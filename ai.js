@@ -123,4 +123,67 @@ function displayresults(travelInfo) {
   itineary.innerHTML = dayplans;
 
   text.textContent = dest.value;
+
+  gsap.from("#mustvisit li", {
+    y: -50,
+    opacity: 0,
+    stagger: 0.5,
+    duration: 1,
+  });
+  gsap.from(".pl-dt-left", {
+    x: -100,
+    opacity: 0,
+    stagger: 0.5,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".pl-dt-left",
+      scroller: "body",
+      start: "top 50%",
+      scrub: 1,
+
+      end: "+=2000",
+    },
+  });
+  gsap.from(".pl-dt-card", {
+    x: -100,
+    opacity: 0,
+    stagger: 0.5,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".pl-card",
+      scroller: "body",
+      start: "top 50%",
+      scrub: 1,
+
+      end: "+=2000",
+    },
+  });
+
+  gsap.from(".travel-card-pl", {
+    y: -100,
+    opacity: 0,
+    stagger: 0.5,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".travel-card-pl",
+      scroller: "body",
+      start: "top 50%",
+      scrub: 1,
+
+      end: "+=2000",
+    },
+  });
 }
+
+//Gsap Animation
+
+gsap.from(".search-cn", {
+  scrollTrigger: {
+    trigger: ".search-cn",
+    scroller: "body",
+    start: "top 70%",
+    scrub: 1,
+  },
+  y: -50,
+  opacity: 0,
+});
